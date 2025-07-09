@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { HiArrowNarrowLeft } from "react-icons/hi";
+import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { getSingleProduct } from "./api";
 
@@ -25,10 +25,13 @@ function ProductDetail() {
   }
 
   return (
-    <div className="w-full min-h-full bg-[#f4f5f7] flex items-center grow">
+    <div className="w-full min-h-full bg-[#f4f5f7] justify-center flex items-center grow px-16">
+      <div className="text-3xl">
+        <HiArrowNarrowLeft />
+      </div>
       <div className="bg-white py-8 px-12 flex flex-col gap-4 w-[70%] mx-auto">
-        <Link className="text-3xl" to="/">
-          <HiArrowNarrowLeft />
+        <Link className="text-3xl flex items-center text-[#46596b]`" to="/">
+          <HiArrowNarrowLeft /> Back
         </Link>
         <div className="flex gap-10">
           <img
@@ -59,6 +62,9 @@ function ProductDetail() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="text-3xl">
+        <HiArrowNarrowRight />
       </div>
     </div>
   );

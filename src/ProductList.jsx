@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from "react";
 import Product from "./Product.jsx";
 import { getProductList } from "./api.js";
+import Loading from "./Loading.jsx";
 
 export default function ProductList() {
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState("default");
   const [productList, setProductList] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const p = getProductList();
     p.then((res) => {
       console.log(res.data.products);
       setProductList(res.data.products);
+      setLoading(false);
     });
   }, []);
 
@@ -35,6 +38,10 @@ export default function ProductList() {
 
   function handleSort(event) {
     setSort(event.target.value);
+  }
+
+  if(loading){
+    return <Loading/>;
   }
 
   return (
