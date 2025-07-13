@@ -25,7 +25,7 @@ export default function ProductList() {
   data.sort((x, y) => {
     if (sort === "title") {
       return x.title - y.title;
-    } else if (sort === "lowToHig") {
+    } else if (sort === "lowToHigh") {
       return +x.price - +y.price;
     } else if (sort === "highToLow") {
       return +y.price - +x.price;
@@ -40,8 +40,8 @@ export default function ProductList() {
     setSort(event.target.value);
   }
 
-  if(loading){
-    return <Loading/>;
+  if (loading) {
+    return <Loading />;
   }
 
   return (
