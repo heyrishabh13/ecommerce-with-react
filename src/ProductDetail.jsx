@@ -26,7 +26,7 @@ function ProductDetail() {
 
   return (
     <div className="w-full min-h-full bg-[#f4f5f7] justify-center flex items-center grow px-16">
-      <div className="text-3xl">
+      <div className="hidden md:block md:text-3xl">
         {id > 1 && (
           <Link to={"/products/" + (+id - 1)} className="flex items-center">
             <HiArrowNarrowLeft />
@@ -37,7 +37,7 @@ function ProductDetail() {
         <Link className="text-3xl flex items-center text-[#46596b]`" to="/">
           <HiArrowNarrowLeft /> Back
         </Link>
-        <div className="flex gap-10">
+        <div className="flex flex-col md:flex-row gap-10">
           <img
             className="w-[50%] h-[50%] object-cover"
             src={product.thumbnail}
@@ -67,7 +67,7 @@ function ProductDetail() {
           </div>
         </div>
       </div>
-      <div className="text-3xl">
+      <div className="hidden md:block md:text-3xl">
         <Link to={"/products/" + (+id + 1)} className="flex items-center">
           <HiArrowNarrowRight />
         </Link>
