@@ -10,14 +10,14 @@ import CartList from "./CartList.jsx";
 export default function App() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* <Navbar /> */}
-      {/* <Routes>
+      <Navbar />
+      <Routes>
         <Route index element={<ProductList />} />
         <Route path="/products/:id" element={<ProductDetail />} />
         <Route path="/cart" element={<CartPage />}></Route>
-      </Routes> */}
-      <CartPage />
-      {/* <Footer /> */}
+      </Routes>
+      {/* <CartPage /> */}
+      <Footer />
     </div>
   );
 }
